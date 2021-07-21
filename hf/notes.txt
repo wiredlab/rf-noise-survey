@@ -1,0 +1,7 @@
+
+2021-07-21 12:35:56
+----------------------------------------
+
+# subtract LO of spyverter (nom 120 MHz) so freq ranges match
+# direct-sampling data
+cat survey_g40_{32..33}.csv | awk -F, 'BEGIN {OFS=FS}  {$3=$3-119900000; $4=$4-119900000; print}' > survey_2.csv
